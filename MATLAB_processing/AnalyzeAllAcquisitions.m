@@ -24,7 +24,7 @@ function AnalyzeAllAcquisitions
     %   Construct2DFTandCalcPhVel
     %   MakePlotAndSaveCSVfile
 
-    !dataDir = 'data_directory';    % CHANGE ME to a directory string or "pwd" for the current directory
+    dataDir = '/data/ss1294/20260416_wren_IECphantoms/cirstest_pusjh/';    % CHANGE ME to a directory string or "pwd" for the current directory
     cd(dataDir)
 
        % analysis directory definition
@@ -35,7 +35,7 @@ function AnalyzeAllAcquisitions
 
     par.DOFmm            = 2;           % depth of field to average (mm)
     par.minLatMM         = 6;           % min lateral position (mm) to start analysis
-    par.maxLatMM         = 20;          % max lateral position (mm) to end analysis
+    par.maxLatMM         = 16;          % max lateral position (mm) to end analysis
     par.maxTimeMS        = 40;          % maximum time (ms) to use in analysis
     par.minTimeMS        = -3;          % minimum time (ms) to zero-pad before push
     par.rolloffTimeMS    = 25;          % time (ms) for rolloff at early and late times
@@ -43,7 +43,7 @@ function AnalyzeAllAcquisitions
     par.LPFcutoffKHz     = 1;           % low-pass filter cutoff frequency (kHz)
     par.desiredPRFkHz    = 20;          % desired PRF (kHz) after upsampling in time 
     par.freqsToAnalyzeHz = 20:10:800;   % frequencies (Hz) for phase velocity measurements
-    par.plot_int_fig     = 0;           % flag for plotting intermediate output figures (shearwave propagation animation and spacetime plot)
+    par.plot_int_fig     = 1;           % flag for plotting intermediate output figures (shearwave propagation animation and spacetime plot)
     par.swsest           = 'ttp';
 
         % parameters for plotting and saving output

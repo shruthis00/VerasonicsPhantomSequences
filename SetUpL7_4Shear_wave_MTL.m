@@ -4,19 +4,20 @@ scriptName='SETUPL7_4Shear_wave_MTL';
 
 %% filepath inputs
 
-filedir = 'path/to/verasonics/directory/'; % CHANGE ME to point to the install of the Vantage Software
-sourcedir = 'path/to/source/directory/'; % CHANGE ME to point to the local download of this repository
+filedir = '/home/verasonics/Documents/VantageNXT-2.1.0-p1/'; % CHANGE ME to point to the install of the Vantage Software
+sourcedir = '/home/ss1294/repos/QIBA_repository/'; % CHANGE ME to point to the local download of this repository
 addpath(genpath(sourcedir));
 
-outdir = 'path/to/save/directory/'; % CHANGE ME to where you if you would like the output files to be stored somewhere, can also be pwd for current directory
+outdir = '/data/ss1294/20260416_wren_IECphantoms/cirs_test/'; % CHANGE ME to where you if you would like the output files to be stored somewhere, can also be pwd for current directory
+
 if ~exist(outdir,'dir');mkdir(outdir);end
 
 cd(filedir);
 
 %% acquisition parameter inputs
 
-push_cycle      = 0;    % # push cycles
-push_focus      = 15;   % focal depth of ARF (mm)
+push_cycle      = 800;  % # push cycles
+push_focus      = 25;   % focal depth of ARF (mm)
 push_Fnum       = 1.5;  % focal aperture
 npush           = 1;    % number of pushes
 ne              = 100;  % number of tracking ensembles after the push
@@ -530,7 +531,8 @@ end
 %     n = n+1;
 % end
 
-saveIQdata = 1;
+saveIQData = 1;
+saveChannelData = 0;
 if saveIQData
     Event(n).info = 'save IQ data';
     Event(n).tx = 0;
